@@ -15,9 +15,7 @@
   </div>
 </template>
 
-<script setup>
-//const { data } = await useFetch("/api/currency/RUB");
-</script>
+<script setup></script>
 
 <style scoped>
 p {
