@@ -1,30 +1,23 @@
 <template>
-  <div>
-    <header class="shadow-sm bg-white">
-      <nav class="container mx-auto p-4 flex justify-between">
-        <NuxtLink to="/" class="logo text-xl font-bold">Nuxt Dojo</NuxtLink>
-        <ul class="flex gap-4">
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/products" class="btn">Products</NuxtLink></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="container mx-auto p-4">
+  <div class="flex h-screen w-screen p-3">
+    <div
+      :class="{
+        'w-full': !showRightSide,
+        'w-4/5 m-4 mx-6 mr-8': showRightSide,
+      }"
+    >
+      <div>
+        <Header title="Finance"></Header>
+      </div>
       <slot />
     </div>
+
+    <div v-if="showRightSide" class="bg-gray-200 w-1/5 rounded-xl"></div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const showRightSide = ref(true);
+</script>
 
-<style scoped>
-.router-link-exact-active {
-  color: aquamarine;
-}
-
-.logo {
-  color: black;
-}
-</style>
+<style scoped></style>
